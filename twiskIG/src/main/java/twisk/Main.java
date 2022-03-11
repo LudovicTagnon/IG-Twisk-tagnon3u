@@ -1,20 +1,20 @@
 package twisk;
 
-//import boggle.Vue.PanneauControle;
-//import boggle.Vue.VueInfos;
-//import boggle.Vue.VueLettres;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import twisk.mondeIG.MondeIG;
+import twisk.vues.VueOutils;
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
 
-        //Boggle bog = new Boggle(4);
+        MondeIG monde = new MondeIG();
+
         BorderPane root = new BorderPane();
-        //root.setBottom(new VueInfos(bog));
+        root.setBottom(new VueOutils(monde));
         //root.setCenter(new VueLettres(bog));
         //root.setRight(new PanneauControle(bog));
         primaryStage.setScene(new Scene(root, 1000, 700));

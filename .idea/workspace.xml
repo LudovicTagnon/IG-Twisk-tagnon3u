@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dcbbf3dc-9f8c-4f8a-9145-5b4e17196c9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/mondeIG/ActiviteIG.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/mondeIG/ActiviteIG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/mondeIG/EtapeIG.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/mondeIG/EtapeIG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/mondeIG/MondeIG.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/mondeIG/MondeIG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/twisk/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/twisk/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/EcouteurBouton.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/EcouteurBouton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueActiviteIG.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueActiviteIG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueEtapeIG.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueEtapeIG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueMondeIG.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueMondeIG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueOutils.java" beforeDir="false" afterPath="$PROJECT_DIR$/twiskIG/src/main/java/twisk/vues/VueOutils.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="269sVPYvCvCwkcR8HQTSOlo6CNH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/twiskIG" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <module name="IG-Twisk-tagnon3u" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dcbbf3dc-9f8c-4f8a-9145-5b4e17196c9a" name="Changes" comment="" />
+      <created>1646847161281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646847161281</updated>
+      <workItem from="1646847163057" duration="242000" />
+      <workItem from="1646847540785" duration="252000" />
+      <workItem from="1647006045145" duration="453000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

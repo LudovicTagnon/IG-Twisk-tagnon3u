@@ -1,16 +1,28 @@
 package twisk.outils;
 
+import java.util.Random;
+
 public class FabriqueIdentifiant {
 
-    protected int noEtape;
+    private int noEtape;
+
+    private static FabriqueIdentifiant instance;
 
     public static FabriqueIdentifiant getInstance(){
-
-        return null;
+        instance = new FabriqueIdentifiant();
+        return instance;
     }
 
-    String getIdentifiantEtape(){
 
-        return null;
+    public String getIdentifiantEtape(){
+//        Random rd = new Random();
+//        this.noEtape = rd.nextInt();
+//        return Integer.toString(this.noEtape);
+        return instance.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "" + noEtape;
     }
 }
