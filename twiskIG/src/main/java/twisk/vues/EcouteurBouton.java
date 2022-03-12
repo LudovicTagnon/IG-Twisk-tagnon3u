@@ -4,7 +4,7 @@ import javafx.event.EventHandler;
 import twisk.mondeIG.MondeIG;
 
 public class EcouteurBouton implements EventHandler<ActionEvent> {
-    MondeIG monde;
+    private MondeIG monde;
 
     public EcouteurBouton(MondeIG monde) {
         this.monde = monde;
@@ -12,7 +12,7 @@ public class EcouteurBouton implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.monde.ajouter("Nouvelle Activite");
+        this.monde.ajouter("Activite");
         //System.out.println("Nouvelle activite\n");
     }
 }

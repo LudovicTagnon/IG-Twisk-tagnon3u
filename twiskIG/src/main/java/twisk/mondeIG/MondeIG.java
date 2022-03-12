@@ -10,42 +10,45 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class MondeIG implements Iterable<EtapeIG>{
+public class MondeIG implements Iterable<EtapeIG> {
 
-    private HashMap<String,EtapeIG> etapes;
+    private HashMap<String, EtapeIG> etapes;
     private ArrayList<Observateur> Obs;
-    private VueMondeIG VM;
-    private VueOutils VO;
+
 
     public MondeIG() {
-        this.etapes = new HashMap<String,EtapeIG>();
-        this.ajouter("Activite");
+        this.etapes = new HashMap<String, EtapeIG>();
         this.Obs = new ArrayList<>();
+        this.ajouter("Activite");
     }
 
-    public void ajouter(String type){
-        if (type == "Activite"){
 
+    public void ajouter(String type) {
+        if (type.equals("Activite")) {
+            this.notifierObservateur();
             FabriqueIdentifiant f = FabriqueIdentifiant.getInstance();
-            ActiviteIG A = new ActiviteIG("Exemple", f.toString(), 30,20);
-            this.etapes.put(f.getIdentifiantEtape(),A);
+            String id = f.getIdentifiantEtape();
+            ActiviteIG A = new ActiviteIG("Activite" + id.substring(5), id, 100, 50);
+            this.etapes.put(id, A);
+            System.out.println(id + "\n");
         }
     }
 
-    public void ajouterObservateur(Observateur v){
+    public void ajouterObservateur(Observateur v) {
         this.Obs.add(v);
     }
 
-    void notifierObservateur(){
-
+    void notifierObservateur() {
+//        for (Observateur o : this.Obs) {
+//            o.reagir();
+//        }
+        for(int i=0; i< this.Obs.size(); i++){
+            Obs.get(i).reagir();
+        }
     }
 
     @Override
     public Iterator<EtapeIG> iterator() {
-        return null;
-    }
-
-    public HashMap<String, EtapeIG> getEtapes() {
-        return etapes;
+        return etapes.values().iterator();
     }
 }

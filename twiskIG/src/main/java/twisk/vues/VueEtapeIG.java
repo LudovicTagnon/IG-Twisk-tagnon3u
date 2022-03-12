@@ -7,12 +7,15 @@ import twisk.mondeIG.MondeIG;
 
 public abstract class VueEtapeIG extends VBox implements Observateur {
 
-    protected Label TitreActivite;
+    protected Label Label;
     EtapeIG etape;
     MondeIG monde;
 
     public VueEtapeIG(MondeIG monde, EtapeIG etape) {
         this.monde = monde;
         this.etape = etape;
+        this.Label = new Label(etape.getNom());
+        this.monde.ajouterObservateur(this);
+        this.getChildren().add(Label);
     }
 }

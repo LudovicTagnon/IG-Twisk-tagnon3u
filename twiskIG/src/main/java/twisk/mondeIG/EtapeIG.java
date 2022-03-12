@@ -1,5 +1,7 @@
 package twisk.mondeIG;
 
+import java.util.Random;
+
 public abstract class EtapeIG {
     protected String nom;
     protected String identifiant;
@@ -13,5 +15,21 @@ public abstract class EtapeIG {
         this.identifiant = idf;
         this.largeur = larg;
         this.hauteur = haut;
+
+        Random r = new Random();
+        posX = r.nextInt(1000-larg);
+        posY = r.nextInt(700-haut);
+    }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    public String getNom() {
+        return nom;
     }
 }

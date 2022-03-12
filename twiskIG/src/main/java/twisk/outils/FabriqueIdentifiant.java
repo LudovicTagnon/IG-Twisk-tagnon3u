@@ -6,23 +6,14 @@ public class FabriqueIdentifiant {
 
     private int noEtape;
 
-    private static FabriqueIdentifiant instance;
+    private static FabriqueIdentifiant instance = new FabriqueIdentifiant();
 
     public static FabriqueIdentifiant getInstance(){
-        instance = new FabriqueIdentifiant();
         return instance;
     }
 
-
     public String getIdentifiantEtape(){
-//        Random rd = new Random();
-//        this.noEtape = rd.nextInt();
-//        return Integer.toString(this.noEtape);
-        return instance.toString();
+        return "Etape" + noEtape++;
     }
 
-    @Override
-    public String toString() {
-        return "" + noEtape;
-    }
 }

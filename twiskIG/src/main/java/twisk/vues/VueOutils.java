@@ -11,7 +11,9 @@ public class VueOutils extends TilePane implements Observateur {
     protected MondeIG monde;
 
     public VueOutils(MondeIG monde) {
-        super();
+
+        monde.ajouterObservateur(this);
+
         this.monde = monde;
 
          this.bouton = new Button("Nouvelle Activité");
@@ -20,9 +22,7 @@ public class VueOutils extends TilePane implements Observateur {
 
          this.getChildren().addAll(this.bouton);
 
-         this.monde.ajouterObservateur(this);
-
-         this.tooltip();
+         //this.tooltip();
 
     }
 
