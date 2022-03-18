@@ -32,4 +32,12 @@ public abstract class EtapeIG {
     public String getNom() {
         return nom;
     }
+
+    public int getLargeur() {
+        return largeur;
+    }
+
+    public int getHauteur() {
+        return hauteur;
+    }
 }

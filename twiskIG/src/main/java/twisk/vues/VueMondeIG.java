@@ -26,8 +26,6 @@ public class VueMondeIG extends Pane implements Observateur {
             VueActiviteIG a = new VueActiviteIG(monde,e);
             a.setAlignment(Pos.CENTER);
             a.relocate(e.getPosX(), e.getPosY());
-            a.setMinHeight(50);
-            a.setMinWidth(100);
             a.setStyle("-fx-border-color: #FF3232; -fx-border-radius: 5 5 5 5;");
             this.getChildren().add(a);
         }

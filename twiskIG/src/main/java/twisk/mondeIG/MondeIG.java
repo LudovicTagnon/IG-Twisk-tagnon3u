@@ -28,7 +28,8 @@ public class MondeIG implements Iterable<EtapeIG> {
             this.notifierObservateur();
             FabriqueIdentifiant f = FabriqueIdentifiant.getInstance();
             String id = f.getIdentifiantEtape();
-            ActiviteIG A = new ActiviteIG("Activite" + id.substring(5), id, 100, 50);
+            TailleComposants t = TailleComposants.getInstance();
+            EtapeIG A = new ActiviteIG("Activite" + id.substring(5), id, t.getLarg(), t.getHaut());
             this.etapes.put(id, A);
             System.out.println(id + "\n");
         }
