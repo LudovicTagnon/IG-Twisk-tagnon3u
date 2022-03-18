@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import twisk.mondeIG.MondeIG;
 import twisk.vues.VueMondeIG;
 import twisk.vues.VueOutils;
+import twisk.vues.VuePointDeControleIG;
 
 public class Main extends Application {
     @Override

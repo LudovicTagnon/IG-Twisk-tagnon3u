@@ -6,6 +6,7 @@ import javafx.scene.layout.Pane;
 import twisk.mondeIG.ActiviteIG;
 import twisk.mondeIG.EtapeIG;
 import twisk.mondeIG.MondeIG;
+import twisk.mondeIG.PointDeControleIG;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -24,10 +25,21 @@ public class VueMondeIG extends Pane implements Observateur {
         this.getChildren().clear();
         for (EtapeIG e: monde) {
             VueActiviteIG a = new VueActiviteIG(monde,e);
+
+            for (PointDeControleIG p: e) {
+                VuePointDeControleIG Vuepdc = new VuePointDeControleIG(monde, p);
+                Vuepdc.setStyle("-fx-border-color: #1339f7; -fx-border-radius: 5 5 5 5; -fx-background-color: 5 5 5 5");
+                this.getChildren().add(Vuepdc);
+            }
+
             a.setAlignment(Pos.CENTER);
             a.relocate(e.getPosX(), e.getPosY());
             a.setStyle("-fx-border-color: #FF3232; -fx-border-radius: 5 5 5 5;");
+
+
+
             this.getChildren().add(a);
+
         }
     }
 }
