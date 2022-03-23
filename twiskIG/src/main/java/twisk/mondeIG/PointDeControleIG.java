@@ -7,7 +7,6 @@ public class PointDeControleIG {
     private String id;
 
     public PointDeControleIG(EtapeIG E, int posX, int posY) {
-        System.out.println("Nouveau Point de Controle");
         this.id = E.getIdentifiant();
         this.posXCentre = posX;
         this.posYCentre = posY;

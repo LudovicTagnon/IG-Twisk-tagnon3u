@@ -3,12 +3,10 @@ package twisk.vues;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import twisk.mondeIG.ActiviteIG;
-import twisk.mondeIG.EtapeIG;
-import twisk.mondeIG.MondeIG;
-import twisk.mondeIG.PointDeControleIG;
+import twisk.mondeIG.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 public class VueMondeIG extends Pane implements Observateur {
@@ -23,6 +21,17 @@ public class VueMondeIG extends Pane implements Observateur {
     @Override
     public void reagir() {
         this.getChildren().clear();
+
+        Iterator<ArcIG> iterateur = this.monde.iterator_arcs();
+
+        System.out.println("Iterateur " + iterateur.hasNext());
+        while (iterateur.hasNext()){
+            ArcIG arc = iterateur.next();
+            VueArcIG vuearcs = new VueArcIG(monde, arc);
+            //iterateur.next();
+            this.getChildren().add(vuearcs);
+        }
+        System.out.println("test2");
         for (EtapeIG e: monde) {
             VueActiviteIG a = new VueActiviteIG(monde,e);
 
@@ -41,5 +50,8 @@ public class VueMondeIG extends Pane implements Observateur {
             this.getChildren().add(a);
 
         }
+
+
+
     }
 }

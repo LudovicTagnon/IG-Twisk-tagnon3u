@@ -13,7 +13,7 @@ public class VuePointDeControleIG extends Circle implements Observateur{
 
     public VuePointDeControleIG(MondeIG monde, PointDeControleIG pdc){
 
-        monde.ajouterObservateur(this);
+        //monde.ajouterObservateur(this);
 
         this.pdc = pdc;
         this.monde = monde;
@@ -21,9 +21,8 @@ public class VuePointDeControleIG extends Circle implements Observateur{
         this.setCenterX(pdc.getPosXCentre());
         this.setCenterY(pdc.getPosYCentre());
         this.setRadius(10);
-        System.out.println("Boucle ajoute cercle");
 
-
+        this.setOnMouseClicked(new EcouteurPDC(monde, this.pdc));
     }
 
     @Override
