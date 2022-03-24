@@ -12,6 +12,7 @@ public class VueActiviteIG extends VueEtapeIG implements Observateur {
     protected HBox hbox;
 
     public VueActiviteIG(MondeIG monde, EtapeIG etape) {
+
         super(monde, etape);
         this.hbox = new HBox();
         hbox.setStyle("-fx-border-color: #0059FF; -fx-background-insets: 0 0 -1 0, 0, 1, 2; -fx-background-radius: 3px, 3px, 2px, 1px;");

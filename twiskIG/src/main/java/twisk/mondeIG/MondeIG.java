@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class MondeIG implements Iterable<EtapeIG> {
+public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
 
     private HashMap<String, EtapeIG> etapes;
     private ArrayList<ArcIG> Arcs;
-    private ArrayList<Observateur> Obs;
+
     private PointDeControleIG pdc_Choisi;
 
     public MondeIG() {
@@ -39,18 +39,7 @@ public class MondeIG implements Iterable<EtapeIG> {
 
 
 
-    public void ajouterObservateur(Observateur v) {
-        this.Obs.add(v);
-    }
 
-    void notifierObservateur() {
-        for (Observateur o : this.Obs) {
-            o.reagir();
-        }
-//        for(int i=0; i< this.Obs.size(); i++){
-//            Obs.get(i).reagir();
-//        }
-    }
 
     @Override
     public Iterator<EtapeIG> iterator() {
