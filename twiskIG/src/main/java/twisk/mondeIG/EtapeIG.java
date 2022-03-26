@@ -65,4 +65,8 @@ public abstract class EtapeIG implements Iterable<PointDeControleIG> {
     public boolean isSelected() {
         return selected;
     }
+
+    public ArrayList<PointDeControleIG> getPdC() {
+        return PdC;
+    }
 }

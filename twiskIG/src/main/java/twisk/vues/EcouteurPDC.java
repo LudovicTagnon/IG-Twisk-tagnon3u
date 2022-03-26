@@ -19,7 +19,7 @@ public class EcouteurPDC implements EventHandler<MouseEvent> {
 
     @Override
     public void handle(MouseEvent mouseEvent) {
-        System.out.println("handle dans la classe EcouteurPDC");
+        //System.out.println("handle dans la classe EcouteurPDC");
         try{
             this.monde.setPdc_Choisi(this.PDC);
         }catch(TwiskException ignored){

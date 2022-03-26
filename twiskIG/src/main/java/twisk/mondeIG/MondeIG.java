@@ -93,4 +93,32 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
             this.notifierObservateur();
         //}
     }
+
+    public void setEtapes(HashMap<String, EtapeIG> etapes) {
+        this.etapes = etapes;
+    }
+
+    public void setArcs(ArrayList<ArcIG> arcs) {
+        Arcs = arcs;
+    }
+
+    public void setEtapes_selec(ArrayList<EtapeIG> etapes_selec) {
+        this.etapes_selec = etapes_selec;
+    }
+
+    public HashMap<String, EtapeIG> getEtapes() {
+        return etapes;
+    }
+
+    public ArrayList<ArcIG> getArcs() {
+        return Arcs;
+    }
+
+    public ArrayList<EtapeIG> getEtapes_selec() {
+        return etapes_selec;
+    }
+
+    public PointDeControleIG getPdc_Choisi() {
+        return pdc_Choisi;
+    }
 }
