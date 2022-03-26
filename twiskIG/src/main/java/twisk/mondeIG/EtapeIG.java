@@ -13,6 +13,7 @@ public abstract class EtapeIG implements Iterable<PointDeControleIG> {
     protected int posY;
     protected int largeur;
     protected int hauteur;
+    protected boolean selected;
 
     EtapeIG(String nom, String idf, int larg, int haut){
         this.nom = nom;
@@ -20,6 +21,7 @@ public abstract class EtapeIG implements Iterable<PointDeControleIG> {
         this.largeur = larg;
         this.hauteur = haut;
         this.PdC = new ArrayList<PointDeControleIG>();
+        this.selected = false;
 
         Random r = new Random();
         posX = r.nextInt(1000-larg);
@@ -60,5 +62,7 @@ public abstract class EtapeIG implements Iterable<PointDeControleIG> {
         return this.PdC.iterator();
     }
 
-
+    public boolean isSelected() {
+        return selected;
+    }
 }

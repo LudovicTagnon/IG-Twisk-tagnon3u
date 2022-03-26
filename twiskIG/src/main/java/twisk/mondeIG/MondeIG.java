@@ -13,17 +13,18 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
 
     private HashMap<String, EtapeIG> etapes;
     private ArrayList<ArcIG> Arcs;
-
+    private ArrayList<EtapeIG> etapes_selec;
     private PointDeControleIG pdc_Choisi;
+
 
     public MondeIG() {
         this.etapes = new HashMap<String, EtapeIG>();
         this.Obs = new ArrayList<Observateur>();
+        this.etapes_selec = new ArrayList<EtapeIG>();
         //this.ajouter("Activite");
         this.pdc_Choisi=null;
         this.Arcs = new ArrayList<ArcIG>();
     }
-
 
     public void ajouter(String type) {
         if (type.equals("Activite")) {
@@ -38,9 +39,6 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
     }
 
 
-
-
-
     @Override
     public Iterator<EtapeIG> iterator() {
         return etapes.values().iterator();
@@ -52,14 +50,25 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
 
     public void setPdc_Choisi(PointDeControleIG pdc_Choisi2) throws TwiskException {
         if(this.pdc_Choisi == null) {
-            System.out.println("null");
             this.pdc_Choisi = pdc_Choisi2;
         }else{
-            System.out.println("Pas null");
             ajouterArc(this.pdc_Choisi, pdc_Choisi2);
             this.pdc_Choisi = null;
         }
-        System.out.println("setPDC_choisi dans la classe MONDE IG");
+        //System.out.println("setPDC_choisi dans la classe MONDE IG");
+    }
+
+    public void setSelect(EtapeIG etape){
+        if(!etape.selected){
+            this.etapes_selec.add(etape);
+        }else{
+            this.etapes_selec.remove(etape);
+        }
+        etape.selected = !etape.isSelected();
+        for (EtapeIG E: this.etapes_selec) {
+            System.out.println(E.getIdentifiant());
+        }
+        //System.out.println("setPDC_choisi dans la classe MONDE IG");
     }
 
     public void ajouterArc(PointDeControleIG pt1, PointDeControleIG pt2) throws TwiskException {

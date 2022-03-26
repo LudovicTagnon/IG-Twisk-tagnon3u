@@ -24,14 +24,13 @@ public class VueMondeIG extends Pane implements Observateur {
 
         Iterator<ArcIG> iterateur = this.monde.iterator_arcs();
 
-        System.out.println("Iterateur " + iterateur.hasNext());
+        //System.out.println("Iterateur " + iterateur.hasNext());
         while (iterateur.hasNext()){
             ArcIG arc = iterateur.next();
             VueArcIG vuearcs = new VueArcIG(monde, arc);
             //iterateur.next();
             this.getChildren().add(vuearcs);
         }
-        System.out.println("test2");
         for (EtapeIG e: monde) {
             VueActiviteIG a = new VueActiviteIG(monde,e);
 
@@ -43,8 +42,6 @@ public class VueMondeIG extends Pane implements Observateur {
 
             a.setAlignment(Pos.CENTER);
             a.relocate(e.getPosX(), e.getPosY());
-            a.setStyle("-fx-border-color: #FF3232; -fx-border-radius: 5 5 5 5;");
-
 
 
             this.getChildren().add(a);

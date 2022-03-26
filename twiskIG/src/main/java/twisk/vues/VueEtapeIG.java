@@ -23,5 +23,7 @@ public abstract class VueEtapeIG extends VBox implements Observateur {
 
         this.Label = new Label(etape.getNom());
         this.getChildren().add(Label);
+
+
     }
 }

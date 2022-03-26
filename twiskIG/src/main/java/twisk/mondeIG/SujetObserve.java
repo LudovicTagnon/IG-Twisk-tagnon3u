@@ -11,7 +11,7 @@ public class SujetObserve {
         this.Obs.add(v);
     }
 
-    void notifierObservateur() {
+    public void notifierObservateur() {
         for (Observateur o : this.Obs) {
             o.reagir();
         }
