@@ -69,4 +69,36 @@ public abstract class EtapeIG implements Iterable<PointDeControleIG> {
     public ArrayList<PointDeControleIG> getPdC() {
         return PdC;
     }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setIdentifiant(String identifiant) {
+        this.identifiant = identifiant;
+    }
+
+    public void setPdC(ArrayList<PointDeControleIG> pdC) {
+        PdC = pdC;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
+    public void setLargeur(int largeur) {
+        this.largeur = largeur;
+    }
+
+    public void setHauteur(int hauteur) {
+        this.hauteur = hauteur;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 }

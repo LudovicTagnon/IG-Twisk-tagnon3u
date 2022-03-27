@@ -1,10 +1,10 @@
 package twisk.vues;
 
 import javafx.application.Platform;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import twisk.mondeIG.MondeIG;
+
+import java.util.Optional;
 
 public class VueMenu extends MenuBar implements Observateur{
 
@@ -17,6 +17,7 @@ public class VueMenu extends MenuBar implements Observateur{
     protected MenuItem Renommer;
     protected MenuItem Supprimer;
 
+
     public VueMenu(MondeIG monde) {
         monde.ajouterObservateur(this);
 
@@ -27,7 +28,6 @@ public class VueMenu extends MenuBar implements Observateur{
         Quitter = new MenuItem("Quitter");
         Renommer = new MenuItem("Renommer");
         Supprimer = new MenuItem("Supprimer");
-
 
         Fichier.getItems().add(Quitter);
 
@@ -47,5 +47,21 @@ public class VueMenu extends MenuBar implements Observateur{
 
     @Override
     public void reagir() {
+        //this.getChildren().clear();
+
+        Supprimer.setOnAction(new EcouteurSupprimer(monde));
+
+        Renommer.setOnAction(new EcouteurRenommer(monde));
+
+        Quitter.setOnAction(event -> Platform.exit());
+
+        this.setStyle(" -fx-border-color: #32ff5b; -fx-border-radius: 5 5 5 5; -fx-fill: 5 5 5 5");
+
+
+
+
+
+        //this.getMenus().addAll(Fichier, Edition);
+
     }
 }
