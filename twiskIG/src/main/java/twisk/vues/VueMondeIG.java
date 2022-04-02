@@ -1,12 +1,18 @@
 package twisk.vues;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import twisk.mondeIG.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 
 public class VueMondeIG extends Pane implements Observateur {
@@ -16,6 +22,9 @@ public class VueMondeIG extends Pane implements Observateur {
     public VueMondeIG(MondeIG monde) {
         this.monde = monde;
         this.monde.ajouterObservateur(this);
+
+        this.setOnDragOver(new EcouteurMondeOver(monde));
+        this.setOnDragDropped(new EcouteurMondeDropped(monde, this));
     }
 
     @Override
@@ -44,10 +53,9 @@ public class VueMondeIG extends Pane implements Observateur {
             a.relocate(e.getPosX(), e.getPosY());
 
 
+
             this.getChildren().add(a);
 
         }
-
-
     }
 }

@@ -15,12 +15,18 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
     private ArrayList<ArcIG> Arcs;
     private ArrayList<EtapeIG> etapes_selec;
     private PointDeControleIG pdc_Choisi;
+    private ArrayList<ArcIG> arc_selec;
+    private ArrayList<EtapeIG> Entrees;
+    private ArrayList<EtapeIG> Sorties;
 
 
     public MondeIG() {
         this.etapes = new HashMap<String, EtapeIG>();
         this.Obs = new ArrayList<Observateur>();
         this.etapes_selec = new ArrayList<EtapeIG>();
+        this.arc_selec = new ArrayList<ArcIG>();
+        this.Entrees = new ArrayList<>();
+        this.Sorties = new ArrayList<>();
         //this.ajouter("Activite");
         this.pdc_Choisi=null;
         this.Arcs = new ArrayList<ArcIG>();
@@ -70,22 +76,35 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
         }
         //System.out.println("setPDC_choisi dans la classe MONDE IG");
     }
+    public void setSelect(ArcIG arc){
+        if(!arc.selected){
+            this.arc_selec.add(arc);
+        }else{
+            this.arc_selec.remove(arc);
+        }
+        arc.selected = !arc.isSelected();
+    }
 
     public void ajouterArc(PointDeControleIG pt1, PointDeControleIG pt2) throws TwiskException {
-        //int flag =0;
-        //Si l'arc n'existe pas deja
+
+        //Si un arc existe déjà à ces 2 points là
         for (ArcIG arc: this.Arcs) {
-            if( (arc.getPDC1().getId() == pt1.getId()) || (arc.getPDC1().getId() == pt2.getId()) ){
+            if( ((arc.getPDC1().getPosXCentre() == pt1.getPosXCentre()) && (arc.getPDC2().getPosXCentre() == pt2.getPosXCentre()) && (arc.getPDC1().getPosYCentre() == pt1.getPosYCentre()) && (arc.getPDC2().getPosYCentre() == pt2.getPosYCentre())) ){
                 //flag=1;
                 this.pdc_Choisi =null;
-                throw new TwiskException("Fleche deja cree");
+                throw new TwiskException("Flèche déjà crée entre ces 2 points de contrôles");
             }
-
+            if((arc.getPDC1().getId() == pt1.getId() &&  arc.getPDC2().getId() == pt2.getId()) || (arc.getPDC1().getId() == pt2.getId() &&  arc.getPDC2().getId() == pt1.getId())){
+                this.pdc_Choisi =null;
+                throw new TwiskException("Flèche déjà crée entre ces 2 activités");
+            }
         }
+
+        //Fleche dans la meme activite
         if(pt2.getId() == pt1.getId()){
             //flag=1;
             this.pdc_Choisi =null;
-            throw new TwiskException("Fleche dans la meme activite");
+            throw new TwiskException("Flèche dans la même activité");
         }
         //if(flag==0){
             ArcIG Arc = new ArcIG(pt1, pt2);
@@ -120,5 +139,35 @@ public class MondeIG extends SujetObserve implements Iterable<EtapeIG> {
 
     public PointDeControleIG getPdc_Choisi() {
         return pdc_Choisi;
+    }
+
+    public ArrayList<ArcIG> getArc_selec() {
+        return arc_selec;
+    }
+
+    public void setArc_selec(ArrayList<ArcIG> arc_selec) {
+        this.arc_selec = arc_selec;
+    }
+
+    public void setEntrees(ArrayList<EtapeIG> entrees) {
+        Entrees = entrees;
+    }
+
+    public void setSorties(ArrayList<EtapeIG> sorties) {
+        Sorties = sorties;
+    }
+
+    public ArrayList<EtapeIG> getEntrees() {
+        return Entrees;
+    }
+
+    public ArrayList<EtapeIG> getSorties() {
+        return Sorties;
+    }
+
+    public void deselectAll(){
+        for (EtapeIG e: this.getEtapes_selec()) {
+            e.setSelected(false);
+        }
     }
 }

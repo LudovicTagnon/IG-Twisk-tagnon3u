@@ -5,10 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import twisk.mondeIG.MondeIG;
-import twisk.vues.VueMenu;
-import twisk.vues.VueMondeIG;
-import twisk.vues.VueOutils;
-import twisk.vues.VuePointDeControleIG;
+import twisk.vues.*;
 
 public class Main extends Application {
     @Override

@@ -23,4 +23,12 @@ public class PointDeControleIG {
     public String getId() {
         return id;
     }
+
+    public void setPosXCentre(int posXCentre) {
+        this.posXCentre = posXCentre;
+    }
+
+    public void setPosYCentre(int posYCentre) {
+        this.posYCentre = posYCentre;
+    }
 }
